@@ -23,29 +23,5 @@ cd MosaicoPDF
 flutter pub get
 flutter run
 
-Dependências Principais
-yaml
-dependencies:
-  camera: ^1.2.13
-  image_collage: ^0.0.3
-  screenshot: ^1.3.0
-  pdf: ^3.10.4
-  path_provider: ^2.1.1
-
-Solução Técnica
-dart
-// Mosaico dinâmico
-ImageCollage(
-  images: capturedImages,
-  showGrid: true,
-  imageFit: BoxFit.cover,
-)
-
-// Geração de PDF
-final image = await screenshotController.captureFromWidget(mosaic);
-pdf.addPage(pw.Page(build: (pw.Context context) {
-  return pw.Center(child: pw.Image(pw.MemoryImage(image));
-});
-
 Considerações Finais
 Implementação completa em Flutter puro que atende todos os requisitos do desafio, superando limitações do FlutterFlow com pacotes nativos e geração de PDF.
