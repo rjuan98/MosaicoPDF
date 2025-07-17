@@ -1,11 +1,12 @@
-📸 MosaicoPDF - Gerador de Mosaicos em PDF
-https://img.shields.io/badge/Flutter-3.19.5-blue?logo=flutter
-https://img.shields.io/badge/License-MIT-green
-https://img.shields.io/badge/Status-Completed-brightgreen
+# 📸 MosaicoPDF - Gerador de Mosaicos em PDF
+
+[![Flutter](https://img.shields.io/badge/Flutter-3.19.5-blue?logo=flutter)](https://flutter.dev)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Completed-brightgreen)]()
 
 Aplicativo completo desenvolvido em Flutter que permite capturar fotos, montar mosaicos dinâmicos e exportar como PDF - solução técnica alternativa para o desafio proposto.
 
-dart
+```dart
 // Exemplo de código principal
 void main() {
   runApp(
@@ -25,19 +26,6 @@ Funcionalidade	Status	Descrição
 💾 Armazenamento local	✅	Salvamento do PDF no dispositivo
 🚦 Validação de botões	✅	Controles inteligentes baseados no estado
 💬 Feedback visual	✅	Mensagens de progresso e resultado
-🧠 Arquitetura e Fluxo
-Diagram
-Code
-graph TD
-    A[Botão Tirar Foto] --> B{Abre Câmera}
-    B --> C[Captura Imagem]
-    C --> D[Adiciona ao Mosaico]
-    D --> E[Atualiza Interface]
-    E --> F{Botão Salvar PDF}
-    F --> G[Tira Screenshot]
-    G --> H[Gera PDF]
-    H --> I[Armazena Localmente]
-    I --> J[Mostra Feedback]
 🧩 Componentes Principais
 1. Tela Principal (home_screen.dart)
 Gerencia o estado das fotos capturadas
@@ -47,7 +35,6 @@ Exibe o mosaico dinâmico usando ImageCollageWidget
 Contém botões de ação flutuantes
 
 2. Gerador de PDF (pdf_generator.dart)
-dart
 Future<Uint8List> generatePdfFromWidget(Widget widget) async {
   final screenshotController = ScreenshotController();
   final image = await screenshotController.captureFromWidget(widget);
@@ -68,7 +55,6 @@ Calcula layout ótimo para o mosaico
 Utiliza algoritmo de disposição adaptativa
 
 ⚙️ Como Executar Localmente
-bash
 # 1. Clonar repositório
 git clone https://github.com/rjuan98/MosaicoPDF.git
 
@@ -109,7 +95,6 @@ Restrições na captura de widgets complexos
 Problemas com serialização para PDF
 
 ✅ Solução Técnica Adotada
-A implementação em Flutter puro resolveu todos esses desafios com:
 // Implementação do mosaico dinâmico
 ImageCollage(
   images: capturedImages,
